@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Image recognition | Minesweeper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="presentation.css">
+  </head>
+  <body>
+    <div class="container drawinggame">
+      <div class="section intro-drawing">
+        <h1>Drawing / image recognition game</h1>
+        <h2>Utilizes a Google API that compares drawn</h2>
+        <h2>image coordinates to a dataset of 50 000 000 drawings</h2>
+        <p><strong>Original implementation at</strong> https://quickdraw.withgoogle.com</p>
+        <p>API usage example found from <strong>Jeroen Druwé</strong> (some guy found from Google)</p>
+        <p>https://jeroendruwe.be/drawing-recognition-using-google-apis-in-angular/</p>
+        <button class="green-button intro-next" type="button" name="next">Next</button>
+      </div>
+      <div class="section code-drawing">
+        <h1>Code</h1>
+        <p>File <strong>action.js</strong> for all user interaction functionalities.</p>
+        <p class="gap">File <strong>canvas.js</strong> for canvas functionalities. Used to capture each line drawn on canvas element.</p>
+        <p>Each line drawing event (<strong>mousedown</strong>) leaves a line.</p>
+        <p>3 properties used from Event object for capturing trace for API usage:</p>
+        <p><strong>e.clientX:</strong> Current mouse pointer x coordinate</p>
+        <p><strong>e.clientY:</strong> Current mouse pointer y coordinate</p>
+        <p><strong>e.timeStamp:</strong> Returns the time (in milliseconds) at which the event was created.</p>
+        <p class="gap">Timestamp starts increasing from first mousedown until canvas clearing event.</p>
+        <p><strong>mouseup</strong> event fires data sending AJAX function</p>
+        <button class="green-button code-next" type="button" name="next">Next</button>
+      </div>
+      <div class="section code-drawing code2">
+        <h1>Data sent to API with AJAX on each mouseup event:</h1>
+        <pre class="black">
+          data: {
+            "options": "enable_pre_space",
+            "requests": [{
+              "writing_guide": {
+                "writing_area_width": canvas.width,
+                "writing_area_height": canvas.height
+              },
+              "ink": trace,
+              "language":"quickdraw"
+            }]
+          }
+        </pre>
+        <p>trace array:</p>
+        <p>Array of arrays with 3 arrays inside each:</p>
+        <p><strong>X coordinate, Y coordinate, timestamp</strong></p>
+        <pre class="black">
+
+          [
+            [
+                 [123, 456, 789, 444, .....],
+                 [565, 234, 513, 554, .....],
+                [1671.7000000000003, 1688.6750000000002, 1705.4450000000002, ...]
+            ],
+            [
+            [123, 456, 789, 444, .....],
+            [565, 234, 513, 554, .....],
+           [1671.7000000000003, 1688.6750000000002, 1705.4450000000002, ...]
+            ]
+          ]
+
+        </pre>
+      </div>
+    </div>
+    <div class="container minesweeper">
+      <div class="section intro-minesweeper">
+        <h1>Minesweeper</h1>
+        <p>Classic 10 x 10 minesweeper.</p>
+        <p>Finds empty space with recursion.</p>
+        <p>Stops when mines nearby, mine flagging with right click.</p>
+        <p></p>
+        <img src="minesweeper.png" alt="Minesweeper picture">
+        <p>https://jsur.github.io/minesweeper-clone/</p>
+      </div>
+    </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="main.js"></script>
+  </body>
+</html>

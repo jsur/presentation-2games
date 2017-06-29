@@ -1,0 +1,105 @@
+html, body, h1 {
+  margin: 0;
+}
+
+@font-face {
+  font-family: 'zig';
+  src: url('zig.ttf');
+}
+
+h1 {
+  margin-bottom: 50px;
+}
+
+.container.drawinggame {
+  height: 100%;
+  width: 100%;
+  background: #ff1d8e;
+  background: -moz-linear-gradient(top, #ff1d8e 0%, #ff369b 22%, #ff4fa7 43%, #ff69b4 64%, #ff83c1 83%, #ff9cce 100%);
+  background: -webkit-linear-gradient(top, #ff1d8e 0%,#ff369b 22%,#ff4fa7 43%,#ff69b4 64%,#ff83c1 83%,#ff9cce 100%);
+  background: linear-gradient(to bottom, #ff1d8e 0%,#ff369b 22%,#ff4fa7 43%,#ff69b4 64%,#ff83c1 83%,#ff9cce 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff1d8e', endColorstr='#ff9cce',GradientType=0 );
+  font-family: 'zig', sans-serif;
+  font-size: 1.2rem;
+  color: white;
+  padding-top: 65px;
+}
+
+.section {
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.code-drawing, .intro-minesweeper h1 {
+  padding-top: 65px;
+}
+
+.intro-drawing,
+.code-drawing {
+  border-bottom: 5px solid #69ffb4;
+}
+
+.intro-drawing p {
+  margin-top: 100px;
+}
+
+.intro-drawing p:last-of-type,
+.code-drawing p:last-of-type {
+  margin-bottom: 100px;
+}
+
+.code2 p:last-of-type {
+  margin-bottom: 50px;
+}
+
+p strong {
+  color: black;
+}
+
+.gap {
+  margin-bottom: 75px;
+}
+
+pre {
+  margin-right: 125px;
+}
+
+.green-button {
+  text-decoration: none;
+  border: none;
+  background-color: #69ffb4;
+  font-family: 'zig', sans-serif;
+  font-size: 1rem;
+  color: white;
+  padding: 1.5rem;
+  box-shadow: 5px 5px 1px 0 #54cc90;
+}
+
+.green-button:focus {
+  outline: 0;
+}
+
+.green-button:active {
+  box-shadow: 2px 2px 1px 0 #54cc90;
+  transform: translateY(3px);
+}
+
+
+/* MINESWEEPER */
+
+.container.minesweeper {
+  background-color: #c0c0c0;
+  font-family: 'Arial'
+}
+
+.container.minesweeper img {
+  margin-top: 50px;
+  width: 20%;
+}
+
+.black {
+  color: black;
+}
