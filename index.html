@@ -13,7 +13,7 @@
         <h2>Utilizes a Google API that compares drawn</h2>
         <h2>image coordinates to a dataset of 50 000 000 drawings</h2>
         <p><strong>Original implementation at</strong> https://quickdraw.withgoogle.com</p>
-        <p>API usage example found from <strong>Jeroen Druwé</strong> (some guy found from Google)</p>
+        <p>API usage example from <strong>Jeroen Druwé</strong> (some guy found from Google)</p>
         <p>https://jeroendruwe.be/drawing-recognition-using-google-apis-in-angular/</p>
         <button class="green-button intro-next" type="button" name="next">Next</button>
       </div>
@@ -45,9 +45,10 @@
             }]
           }
         </pre>
-        <p>trace array:</p>
+        <p>"ink" property takes trace array:</p>
         <p>Array of arrays with 3 arrays inside each:</p>
-        <p><strong>X coordinate, Y coordinate, timestamp</strong></p>
+        <p><strong>First: X coordinates, second: Y coordinates, third: timestamps</strong></p>
+        <p>One array triplet represents one line drawn between one mousedown and mouseup</p>
         <pre class="black">
 
           [
