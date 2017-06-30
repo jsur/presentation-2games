@@ -92,7 +92,11 @@ pre {
 
 .container.minesweeper {
   background-color: #c0c0c0;
-  font-family: 'Arial'
+  font-family: 'Arial';
+}
+
+.container.minesweeper p {
+  font-size: 20px;
 }
 
 .container.minesweeper img {
